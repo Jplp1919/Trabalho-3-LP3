@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T00:25:05.352920100Z</date>
+  <millis>1670891105352</millis>
+  <nanos>920100</nanos>
+  <sequence>51</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>WARNING</level>
+  <class>trab02.PersistDAO</class>
+  <method>cleanTableBook</method>
+  <thread>20</thread>
+  <message>Livros Deletados</message>
+</record>
+</log>

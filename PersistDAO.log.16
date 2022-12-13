@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T00:17:56.038409300Z</date>
+  <millis>1670890676038</millis>
+  <nanos>409300</nanos>
+  <sequence>21</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteLivro</method>
+  <thread>20</thread>
+  <message>Livro(s) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:17:56.039406400Z</date>
+  <millis>1670890676039</millis>
+  <nanos>406400</nanos>
+  <sequence>22</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteLivro</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:17:58.136894500Z</date>
+  <millis>1670890678136</millis>
+  <nanos>894500</nanos>
+  <sequence>24</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteLivro</method>
+  <thread>20</thread>
+  <message>Livro(s) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:17:58.137888800Z</date>
+  <millis>1670890678137</millis>
+  <nanos>888800</nanos>
+  <sequence>25</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteLivro</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:02.310079400Z</date>
+  <millis>1670890682310</millis>
+  <nanos>79400</nanos>
+  <sequence>27</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:02.311081800Z</date>
+  <millis>1670890682311</millis>
+  <nanos>81800</nanos>
+  <sequence>28</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:03.986581500Z</date>
+  <millis>1670890683986</millis>
+  <nanos>581500</nanos>
+  <sequence>30</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:03.986581500Z</date>
+  <millis>1670890683986</millis>
+  <nanos>581500</nanos>
+  <sequence>31</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:06.715703500Z</date>
+  <millis>1670890686715</millis>
+  <nanos>703500</nanos>
+  <sequence>33</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:06.716709900Z</date>
+  <millis>1670890686716</millis>
+  <nanos>709900</nanos>
+  <sequence>34</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:08.997784800Z</date>
+  <millis>1670890688997</millis>
+  <nanos>784800</nanos>
+  <sequence>36</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:08.998812800Z</date>
+  <millis>1670890688998</millis>
+  <nanos>812800</nanos>
+  <sequence>37</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:12.364315400Z</date>
+  <millis>1670890692364</millis>
+  <nanos>315400</nanos>
+  <sequence>39</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:12.366312500Z</date>
+  <millis>1670890692366</millis>
+  <nanos>312500</nanos>
+  <sequence>40</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:31.846250600Z</date>
+  <millis>1670890711846</millis>
+  <nanos>250600</nanos>
+  <sequence>43</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>listarEscritores</method>
+  <thread>20</thread>
+  <message>Escritores Mostrados</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:31.847249200Z</date>
+  <millis>1670890711847</millis>
+  <nanos>249200</nanos>
+  <sequence>44</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>listarEscritores</method>
+  <thread>20</thread>
+  <message>Quantidade de Escritores: 5</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:41.777672100Z</date>
+  <millis>1670890721777</millis>
+  <nanos>672100</nanos>
+  <sequence>46</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>listarLivros</method>
+  <thread>20</thread>
+  <message>Livros Mostrados</message>
+</record>
+<record>
+  <date>2022-12-13T00:18:41.778671100Z</date>
+  <millis>1670890721778</millis>
+  <nanos>671100</nanos>
+  <sequence>47</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>listarLivros</method>
+  <thread>20</thread>
+  <message>Quantidade de Livros: 0</message>
+</record>
+<record>
+  <date>2022-12-13T00:20:01.613588300Z</date>
+  <millis>1670890801613</millis>
+  <nanos>588300</nanos>
+  <sequence>49</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveEscritor</method>
+  <thread>20</thread>
+  <message>Escritor Salvo com Sucuesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:25:05.352920100Z</date>
+  <millis>1670891105352</millis>
+  <nanos>920100</nanos>
+  <sequence>51</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>WARNING</level>
+  <class>trab02.PersistDAO</class>
+  <method>cleanTableBook</method>
+  <thread>20</thread>
+  <message>Livros Deletados</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T00:51:43.490203500Z</date>
+  <millis>1670892703490</millis>
+  <nanos>203500</nanos>
+  <sequence>34</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>WARNING</level>
+  <class>trab02.PersistDAO</class>
+  <method>cleanTableBook</method>
+  <thread>20</thread>
+  <message>Livros Deletados</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.495191Z</date>
+  <millis>1670892703495</millis>
+  <nanos>191000</nanos>
+  <sequence>35</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.501548900Z</date>
+  <millis>1670892703501</millis>
+  <nanos>548900</nanos>
+  <sequence>36</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.507031800Z</date>
+  <millis>1670892703507</millis>
+  <nanos>31800</nanos>
+  <sequence>37</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.512296900Z</date>
+  <millis>1670892703512</millis>
+  <nanos>296900</nanos>
+  <sequence>38</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.517315200Z</date>
+  <millis>1670892703517</millis>
+  <nanos>315200</nanos>
+  <sequence>39</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T00:51:43.522937400Z</date>
+  <millis>1670892703522</millis>
+  <nanos>937400</nanos>
+  <sequence>40</sequence>
+  <logger>trab02.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab02.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+</log>
