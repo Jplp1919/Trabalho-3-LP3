@@ -4,6 +4,11 @@
  */
 package trab02;
 
+import trab03.PersistDAO;
+import trab03.DadosEstoque;
+import trab03.ConnectionFactory;
+import trab03.Escritor;
+import trab03.Livro;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
@@ -79,7 +84,7 @@ public class PersistDAOTest {
         Livro livro = new Livro(titulo, genero, isbn, preco, idEscritor);
         dao.saveLivro(livro);
         int quantidade = 45;
-        dao.saveEstoque(livro.getId(), quantidade);
+        dao.updateEstoque(livro.getId(), quantidade);
         int teste = dao.getEstoquePorId(Integer.toString(livro.getId()));
         assertEquals(quantidade, teste);
     }
@@ -126,5 +131,13 @@ public class PersistDAOTest {
         List<DadosEstoque> teste = dao.getDadosEstoque();
         assertNotNull(teste);
   }
-
+ 
+  @Test
+  public void deveCadastrarEditora() throws SQLException{
+      String nome = "testenome";
+      PersistDAO dao = new PersistDAO(con);
+      dao.saveEditora(nome);
+      int teste = dao.getEditoraId(nome);
+      assertNotNull(teste);
+  }
 }

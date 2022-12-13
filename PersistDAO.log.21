@@ -150,3 +150,31 @@
   <message>Livro Salvo com Sucesso</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T15:57:18.713908900Z</date>
+  <millis>1670947038713</millis>
+  <nanos>908900</nanos>
+  <sequence>39</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:18.719893200Z</date>
+  <millis>1670947038719</millis>
+  <nanos>893200</nanos>
+  <sequence>40</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>20</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+</log>

@@ -2286,3 +2286,311 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T15:38:50.456499700Z</date>
+  <millis>1670945930456</millis>
+  <nanos>499700</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:38:53.710340100Z</date>
+  <millis>1670945933710</millis>
+  <nanos>340100</nanos>
+  <sequence>4</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:38:58.810026600Z</date>
+  <millis>1670945938810</millis>
+  <nanos>26600</nanos>
+  <sequence>7</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:39:00.206021200Z</date>
+  <millis>1670945940206</millis>
+  <nanos>21200</nanos>
+  <sequence>9</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:39:01.502513100Z</date>
+  <millis>1670945941502</millis>
+  <nanos>513100</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:39:03.724468600Z</date>
+  <millis>1670945943724</millis>
+  <nanos>468600</nanos>
+  <sequence>13</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T15:49:02.967655600Z</date>
+  <millis>1670946542967</millis>
+  <nanos>655600</nanos>
+  <sequence>0</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Escritores Carregado com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T15:49:03.098507400Z</date>
+  <millis>1670946543098</millis>
+  <nanos>507400</nanos>
+  <sequence>8</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Carregado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T15:56:48.732148800Z</date>
+  <millis>1670947008732</millis>
+  <nanos>148800</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:56:53.883886400Z</date>
+  <millis>1670947013883</millis>
+  <nanos>886400</nanos>
+  <sequence>5</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:56:55.474905800Z</date>
+  <millis>1670947015474</millis>
+  <nanos>905800</nanos>
+  <sequence>8</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:56:56.516258900Z</date>
+  <millis>1670947016516</millis>
+  <nanos>258900</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:56:57.559166Z</date>
+  <millis>1670947017559</millis>
+  <nanos>166000</nanos>
+  <sequence>14</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:56:58.585193200Z</date>
+  <millis>1670947018585</millis>
+  <nanos>193200</nanos>
+  <sequence>17</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:05.480366Z</date>
+  <millis>1670947025480</millis>
+  <nanos>366000</nanos>
+  <sequence>20</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:06.749320600Z</date>
+  <millis>1670947026749</millis>
+  <nanos>320600</nanos>
+  <sequence>23</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:09.247787Z</date>
+  <millis>1670947029247</millis>
+  <nanos>787000</nanos>
+  <sequence>26</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:12.850100700Z</date>
+  <millis>1670947032850</millis>
+  <nanos>100700</nanos>
+  <sequence>29</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:15.308733300Z</date>
+  <millis>1670947035308</millis>
+  <nanos>733300</nanos>
+  <sequence>32</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:18.669052200Z</date>
+  <millis>1670947038669</millis>
+  <nanos>52200</nanos>
+  <sequence>33</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Escritores Carregado com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-13T15:57:18.733327Z</date>
+  <millis>1670947038733</millis>
+  <nanos>327000</nanos>
+  <sequence>41</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Carregado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T16:01:44.793879600Z</date>
+  <millis>1670947304793</millis>
+  <nanos>879600</nanos>
+  <sequence>5</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookUpdate</class>
+  <method>jButtonAtualizarActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Atualizado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-13T17:21:33.256141700Z</date>
+  <millis>1670952093256</millis>
+  <nanos>141700</nanos>
+  <sequence>3</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor Deletado</message>
+</record>
+</log>
