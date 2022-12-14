@@ -10,6 +10,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import static trab03.BookFrame.logger;
 
 public class BookUpdate extends javax.swing.JFrame {
 
@@ -31,7 +32,7 @@ public class BookUpdate extends javax.swing.JFrame {
             rs = pstm.getResultSet();
 
             while (rs.next()) {
-              
+
                 rowData[0] = rs.getInt(1);
                 rowData[1] = rs.getString(2);
                 rowData[2] = rs.getString(3);
@@ -41,8 +42,8 @@ public class BookUpdate extends javax.swing.JFrame {
                 List<String> nome = dao.getEscritorById(idescritor);
                 rowData[5] = nome.get(0);
                 rowData[6] = idescritor;
-               
-                rowData[7]= dao.getEditoraPorId( Integer.toString(rs.getInt(7)));
+
+                rowData[7] = dao.getEditoraPorId(Integer.toString(rs.getInt(7)));
                 dtm.addRow(rowData);
             }
 
@@ -346,18 +347,17 @@ public class BookUpdate extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldIsbnActionPerformed
 
     private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
-
-        String id = jTextFieldBookId.getText();
-        String titulo = jTextFieldBookTitulo.getText();
-        String genero = jTextFieldBookGenero.getText();
-        String isbn = jTextFieldIsbn.getText();
-        String preco = jTextFieldPreco.getText();
-
-        int idEscritor = Integer.parseInt(jTextFieldEscritorID.getText());
-
-        String NomeEditora = jTextFieldEditora.getText();
-
+        
         try {
+            String id = jTextFieldBookId.getText();
+            String titulo = jTextFieldBookTitulo.getText();
+            String genero = jTextFieldBookGenero.getText();
+            String isbn = jTextFieldIsbn.getText();
+            String preco = jTextFieldPreco.getText();
+            int idEscritor = Integer.parseInt(jTextFieldEscritorID.getText());
+
+            String NomeEditora = jTextFieldEditora.getText();
+
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             //idEscritor = dao.getEscritorById(idEscritor);
@@ -376,6 +376,9 @@ public class BookUpdate extends javax.swing.JFrame {
         } catch (SQLException ex) {
 
             logger.log(Level.SEVERE, null, "Escritor não Cadastrado");
+        } catch (NumberFormatException ex) {
+            Message m = new Message("Id Não Encontrado ");
+            logger.log(Level.WARNING, null, ex);
         }
 
 
@@ -420,15 +423,13 @@ public class BookUpdate extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldBookIdActionPerformed
 
     private void jTableEditoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEditoraMouseClicked
-    
-         int index = jTableEditora.getSelectedRow();
+
+        int index = jTableEditora.getSelectedRow();
 
         Object editora = jTableEditora.getValueAt(index, 1);
 
-
         jTextFieldEditora.setText(editora.toString());
 
-        
 
     }//GEN-LAST:event_jTableEditoraMouseClicked
 

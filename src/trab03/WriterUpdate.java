@@ -10,6 +10,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import static trab03.BookFrame.logger;
 
 public class WriterUpdate extends javax.swing.JFrame {
 
@@ -198,27 +199,32 @@ public class WriterUpdate extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldWriterSobrenomeActionPerformed
 
     private void jButtonAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtualizarActionPerformed
-
-        String id = jTextFieldWriterId.getText();
-        String nome = jTextFieldWriterNome.getText();
-        String sobrenome = jTextFieldWriterSobrenome.getText();
-        
         try {
+            String id = jTextFieldWriterId.getText();
+            String nome = jTextFieldWriterNome.getText();
+            String sobrenome = jTextFieldWriterSobrenome.getText();
+            if(id == null || id.isEmpty()){
+                throw new NumberFormatException();
+            }
+            System.out.println(id);
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             //idEscritor = dao.getEscritorById(idEscritor);
-            
+
             dao.updateEscritor(id, nome, sobrenome);
             DefaultTableModel dtm = (DefaultTableModel) writerTable.getModel();
             dtm.setRowCount(0);
             this.addBookRows(con);
-            logger.info("Livro Atualizado");
+
             bookframe.clearEscritores();
             bookframe.addEscritorRows(con);
 
         } catch (SQLException ex) {
 
             logger.log(Level.SEVERE, null, "Escritor não Cadastrado");
+        } catch (NumberFormatException ex) {
+            Message m = new Message("Id Não Encontrado ");
+            logger.log(Level.WARNING, null, ex);
         }
 
 
@@ -240,11 +246,9 @@ public class WriterUpdate extends javax.swing.JFrame {
             Object nome = writerTable.getValueAt(index, 1);
             Object sobrenome = writerTable.getValueAt(index, 2);
 
-
             jTextFieldWriterId.setText(id.toString());
             jTextFieldWriterNome.setText(nome.toString());
             jTextFieldWriterSobrenome.setText(sobrenome.toString());
-
 
         } catch (SQLException ex) {
             logger.log(Level.SEVERE, null, ex);

@@ -151,7 +151,6 @@ public class BookFrame extends javax.swing.JFrame {
         jTextFieldIdEscritor = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jButtonDeleteEscritor = new javax.swing.JButton();
-        xmlButtonLoadWriter = new javax.swing.JButton();
         xmlButtonExportWriter = new javax.swing.JButton();
         jButtonWriterRegister = new javax.swing.JButton();
         jButtonWriterUpdate = new javax.swing.JButton();
@@ -161,12 +160,10 @@ public class BookFrame extends javax.swing.JFrame {
         jTextFieldIdBook = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButtonDeleteBook = new javax.swing.JButton();
-        xmlButtonBookLoad = new javax.swing.JButton();
         xmlButtonExportBook = new javax.swing.JButton();
         jButtonInserirLivro = new javax.swing.JButton();
         jButtonAtualizar = new javax.swing.JButton();
         jButtonCadastrarEditora = new javax.swing.JButton();
-        jButtonXmlEditora = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -337,14 +334,6 @@ public class BookFrame extends javax.swing.JFrame {
             }
         });
 
-        xmlButtonLoadWriter.setForeground(new java.awt.Color(0, 204, 51));
-        xmlButtonLoadWriter.setText("Carregar Xml");
-        xmlButtonLoadWriter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xmlButtonLoadWriterActionPerformed(evt);
-            }
-        });
-
         xmlButtonExportWriter.setForeground(new java.awt.Color(255, 51, 51));
         xmlButtonExportWriter.setText("Exportar Xml");
         xmlButtonExportWriter.addActionListener(new java.awt.event.ActionListener() {
@@ -391,8 +380,6 @@ public class BookFrame extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(xmlButtonLoadWriter)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(xmlButtonExportWriter)
                 .addGap(19, 19, 19))
         );
@@ -412,9 +399,7 @@ public class BookFrame extends javax.swing.JFrame {
                     .addComponent(jButtonWriterUpdate)
                     .addComponent(jButtonWriterRegister))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(xmlButtonExportWriter)
-                    .addComponent(xmlButtonLoadWriter))
+                .addComponent(xmlButtonExportWriter)
                 .addGap(37, 37, 37))
         );
 
@@ -482,14 +467,6 @@ public class BookFrame extends javax.swing.JFrame {
             }
         });
 
-        xmlButtonBookLoad.setForeground(new java.awt.Color(0, 153, 51));
-        xmlButtonBookLoad.setText("Carregar Xml");
-        xmlButtonBookLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                xmlButtonBookLoadActionPerformed(evt);
-            }
-        });
-
         xmlButtonExportBook.setForeground(new java.awt.Color(255, 0, 0));
         xmlButtonExportBook.setText("Exportar Xml");
         xmlButtonExportBook.addActionListener(new java.awt.event.ActionListener() {
@@ -519,13 +496,6 @@ public class BookFrame extends javax.swing.JFrame {
             }
         });
 
-        jButtonXmlEditora.setText("Carregar Editoras");
-        jButtonXmlEditora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonXmlEditoraActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -535,17 +505,9 @@ public class BookFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(xmlButtonBookLoad))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonXmlEditora)
-                            .addComponent(jButtonCadastrarEditora))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(200, 200, 200)
+                .addComponent(jButtonCadastrarEditora)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addComponent(xmlButtonExportBook)
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -578,12 +540,8 @@ public class BookFrame extends javax.swing.JFrame {
                     .addComponent(jButtonInserirLivro))
                 .addGap(44, 44, 44)
                 .addComponent(jButtonCadastrarEditora)
-                .addGap(29, 29, 29)
-                .addComponent(jButtonXmlEditora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(xmlButtonExportBook)
-                    .addComponent(xmlButtonBookLoad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addComponent(xmlButtonExportBook)
                 .addGap(30, 30, 30))
         );
 
@@ -613,10 +571,10 @@ public class BookFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldIdBookActionPerformed
 
     private void jButtonDeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteBookActionPerformed
-
+        try {
         String StrId = jTextFieldIdBook.getText();
         int id = Integer.parseInt(StrId);
-        try {
+        
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             dao.deleteLivro(id);
@@ -628,10 +586,13 @@ public class BookFrame extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             logger.log(Level.SEVERE, null, ex);
+        }catch (NumberFormatException ex) {
+            Message m = new Message("Id Não Encontrado ");
+            logger.log(Level.WARNING, null, ex);
         }
-
+       
         jTextFieldIdBook.setText("");
-
+ 
     }//GEN-LAST:event_jButtonDeleteBookActionPerformed
 
     private void jTextFieldIdEscritorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdEscritorActionPerformed
@@ -662,73 +623,6 @@ public class BookFrame extends javax.swing.JFrame {
             logger.log(Level.WARNING, null, ex);
         }
     }//GEN-LAST:event_jButtonDeleteEscritorActionPerformed
-
-    private void xmlButtonBookLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xmlButtonBookLoadActionPerformed
-
-        // String path = xmlLocationTextFieldBook.getText();
-        DocumentReader dr = new DocumentReader();
-        String pathLivros = "./livros.xml";
-        //  if (path == null || path == "") {
-        //  path = "./livros.xml";
-        // }
-
-        try {
-
-            Connection con = new ConnectionFactory().establishConnection();
-            PersistDAO dao = new PersistDAO(con);
-            List<Livro> livros = dr.readLivros(pathLivros);
-
-            dao.cleanTableBook();
-            for (int i = 0; i < livros.size(); i++) {
-                dao.saveLivro(livros.get(i));
-            }
-            // dao.saveLivro(livros.get());
-
-            DefaultTableModel dtm = (DefaultTableModel) bookTable.getModel();
-            clearBooks();
-            clearEsotque();
-            this.addBookRows(con);
-            this.addEstoqueRows(con);
-            logger.info("Xml de Livro Carregado");
-        } catch (XPathExpressionException | SAXException | ParserConfigurationException | IOException ex) {
-            logger.log(Level.WARNING, null, ex);
-        } catch (SQLException ex) {
-            // new Message("Escritores nao cadastrados");
-            logger.log(Level.WARNING, "Escritor nao cadastrado");
-
-        }
-
-    }//GEN-LAST:event_xmlButtonBookLoadActionPerformed
-
-    private void xmlButtonLoadWriterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xmlButtonLoadWriterActionPerformed
-
-        DocumentReader dr = new DocumentReader();
-        String pathEscritores = "./escritores.xml";
-
-        try {
-            Connection con = new ConnectionFactory().establishConnection();
-            PersistDAO dao = new PersistDAO(con);
-            List<Escritor> escritores = dr.readEscritores(pathEscritores);
-
-            for (int i = 0; i < escritores.size(); i++) {
-                dao.saveEscritorId(escritores.get(i));
-            }
-
-            DefaultTableModel dtm = (DefaultTableModel) escritorTable.getModel();
-            dtm.setRowCount(0);
-            this.addEscritorRows(con);
-            logger.info("Xml de Escritores Carregado com Sucesso");
-        } catch (XPathExpressionException | SAXException | ParserConfigurationException | IOException ex) {
-            Logger.getLogger(BookFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            logger.log(Level.WARNING, "Escritor(es) ja cadastrado(s)");
-            // new Message("Escritores ja cadastrados");
-
-        }
-
-
-    }//GEN-LAST:event_xmlButtonLoadWriterActionPerformed
 
     private void xmlButtonExportWriterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xmlButtonExportWriterActionPerformed
 
@@ -929,12 +823,12 @@ public class BookFrame extends javax.swing.JFrame {
         DocumentReader dr = new DocumentReader();
        
          String pathEditoras = "./editoras.xml";
-
+       
         try {
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             List<Editora> editoras = dr.readEditoras(pathEditoras);
-
+            dao.wipeEditoras();
             for (int i = 0; i < editoras.size(); i++) {
                 dao.saveEditora(editoras.get(i));
             }
@@ -1041,31 +935,6 @@ public class BookFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonCadastrarEditoraActionPerformed
 
-    private void jButtonXmlEditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXmlEditoraActionPerformed
-        DocumentReader dr = new DocumentReader();
-        String pathEditoras = "./editoras.xml";
-
-        try {
-            Connection con = new ConnectionFactory().establishConnection();
-            PersistDAO dao = new PersistDAO(con);
-            List<Editora> editoras = dr.readEditoras(pathEditoras);
-
-            for (int i = 0; i < editoras.size(); i++) {
-                dao.saveEditora(editoras.get(i));
-            }
-
-        } catch (XPathExpressionException | SAXException | ParserConfigurationException | IOException ex) {
-            Logger.getLogger(BookFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            System.out.println(ex);
-            logger.log(Level.WARNING, "Editora(s) ja cadastrada(s)");
-            // new Message("Escritores ja cadastrados");
-
-        }
-
-
-    }//GEN-LAST:event_jButtonXmlEditoraActionPerformed
-
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1096,7 +965,6 @@ public class BookFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPlus;
     private javax.swing.JButton jButtonWriterRegister;
     private javax.swing.JButton jButtonWriterUpdate;
-    private javax.swing.JButton jButtonXmlEditora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
@@ -1114,10 +982,8 @@ public class BookFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldIdBook;
     private javax.swing.JTextField jTextFieldIdEscritor;
     private javax.swing.JTextField jTextFieldQuantidade;
-    private javax.swing.JButton xmlButtonBookLoad;
     private javax.swing.JButton xmlButtonExportBook;
     private javax.swing.JButton xmlButtonExportWriter;
-    private javax.swing.JButton xmlButtonLoadWriter;
     // End of variables declaration//GEN-END:variables
 
 }

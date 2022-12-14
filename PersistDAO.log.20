@@ -226,3 +226,67 @@
   <message>Livro Salvo com Sucesso</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T20:36:34.558763100Z</date>
+  <millis>1671050194558</millis>
+  <nanos>763100</nanos>
+  <sequence>64</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>updateLivro</method>
+  <thread>20</thread>
+  <message>Titulo Atualizado no Livro com Id: 68</message>
+</record>
+<record>
+  <date>2022-12-14T20:36:34.559720800Z</date>
+  <millis>1671050194559</millis>
+  <nanos>720800</nanos>
+  <sequence>65</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>updateLivro</method>
+  <thread>20</thread>
+  <message>Genero Atualizado no Livro com Id: 68</message>
+</record>
+<record>
+  <date>2022-12-14T20:36:34.561715900Z</date>
+  <millis>1671050194561</millis>
+  <nanos>715900</nanos>
+  <sequence>66</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>updateLivro</method>
+  <thread>20</thread>
+  <message>Preco Atualizado no Livro com Id: 68</message>
+</record>
+<record>
+  <date>2022-12-14T20:36:34.562713300Z</date>
+  <millis>1671050194562</millis>
+  <nanos>713300</nanos>
+  <sequence>67</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>updateLivro</method>
+  <thread>20</thread>
+  <message>Id do Escritor Atualizado no Livro com Id: 68</message>
+</record>
+<record>
+  <date>2022-12-14T20:36:34.563710300Z</date>
+  <millis>1671050194563</millis>
+  <nanos>710300</nanos>
+  <sequence>68</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>updateLivro</method>
+  <thread>20</thread>
+  <message>Id da Editora Atualizada no Livro com Id: 68</message>
+</record>
+</log>
