@@ -125,8 +125,9 @@ public class EditoraRegister extends javax.swing.JFrame {
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             String nome = jTextFieldNomeEditora.getText();
-
-            dao.saveEditora(nome);
+            Editora editora = new Editora();
+            editora.setNome(nome);
+            dao.saveEditora(editora);
             this.clearEditoras();
             this.addEditoraRows(con);
         } catch (SQLException ex) {

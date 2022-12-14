@@ -70,14 +70,14 @@ public class PersistDAO {
 
     }
 
-    public void saveEditora(String nome) throws SQLException {
+    public void saveEditora(Editora editora) throws SQLException {
 
         String sql = "INSERT INTO Editora (Nome) VALUE (?);";
 
         try ( PreparedStatement pstm = con.prepareStatement(sql)) {
             fh = new FileHandler("PersistDAO.log", true);
             logger.addHandler(fh);
-            pstm.setString(1, nome);
+            pstm.setString(1, editora.getNome());
 
             pstm.execute();
 
@@ -167,7 +167,7 @@ public class PersistDAO {
     public List<Livro> listarLivros() throws SQLException {
         List<Livro> livros = new ArrayList<>();
 
-        String sql = "SELECT IDLIVROS, TITULO, GENERO, ISBN, PRECO, IDESCRITOR FROM LIVROS";
+        String sql = "SELECT IDLIVROS, TITULO, GENERO, ISBN, PRECO, IDESCRITOR, IDEDITORA FROM LIVROS";
 
         try ( PreparedStatement pstm = con.prepareStatement(sql)) {
             fh = new FileHandler("PersistDAO.log", true);
@@ -177,7 +177,9 @@ public class PersistDAO {
             try ( ResultSet rs = pstm.getResultSet()) {
                 while (rs.next()) {
                     Livro livro
-                            = new Livro(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDouble(5), rs.getInt(6));
+                            = new Livro(rs.getInt(1), rs.getString(2), rs.getString(3),
+                                    rs.getString(4), rs.getDouble(5), rs.getInt(6),
+                                    rs.getInt(7));
 
                     livros.add(livro);
                 }
@@ -220,6 +222,35 @@ public class PersistDAO {
         return escritores;
     }
 
+        public List<Editora> listarEditoras() throws SQLException {
+        List<Editora> editoras = new ArrayList<>();
+
+        String sql = "SELECT * FROM EDITORA";
+
+        try ( PreparedStatement pstm = con.prepareStatement(sql)) {
+            fh = new FileHandler("PersistDAO.log", true);
+            logger.addHandler(fh);
+            pstm.execute();
+            try ( ResultSet rs = pstm.getResultSet()) {
+                while (rs.next()) {
+                    Editora editora = new Editora(rs.getInt(1), rs.getString(2));
+                    editoras.add(editora);
+                }
+                if(editoras.size() != 0){
+                logger.info("Editoras Mostradas");
+                logger.log(Level.INFO, "Quantidade de Editoras: {0}", editoras.size());
+                } else {
+                    logger.info("Nenhuma Editora Cadastrada");
+                }
+
+            }
+
+        } catch (IOException | SecurityException | SQLException ex) {
+            logger.log(Level.WARNING, null, ex);
+            return null;
+        }
+        return editoras;
+    }
     public List<Livro> buscarLivro(int i) throws SQLException {
         List<Livro> livros = new ArrayList<Livro>();
 
@@ -607,5 +638,24 @@ public class PersistDAO {
         }
 
         return editora;
+    }
+    
+    public void wipeEditoras(){
+        try {
+            String sql = "DELETE FROM EDITORA";
+            fh = new FileHandler("PersistDAO.log", true);
+            logger.addHandler(fh);
+            try ( PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.execute();
+                logger.warning("Editoras Deletadas");
+            } catch (SQLException ex) {
+                logger.log(Level.WARNING, null, ex);
+
+            }
+
+        } catch (IOException | SecurityException ex) {
+            logger.log(Level.SEVERE, null, ex);
+
+        }
     }
 }

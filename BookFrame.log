@@ -5798,3 +5798,896 @@
   <message>Livro Atualizado</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T14:26:26.496989400Z</date>
+  <millis>1671027986496</millis>
+  <nanos>989400</nanos>
+  <sequence>6</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookUpdate</class>
+  <method>jButtonAtualizarActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Atualizado</message>
+</record>
+<record>
+  <date>2022-12-14T14:26:41.044039300Z</date>
+  <millis>1671028001044</millis>
+  <nanos>39300</nanos>
+  <sequence>9</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>xmlButtonExportBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T14:28:00.811835200Z</date>
+  <millis>1671028080811</millis>
+  <nanos>835200</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>xmlButtonExportBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T14:35:04.351239600Z</date>
+  <millis>1671028504351</millis>
+  <nanos>239600</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>xmlButtonExportBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T14:43:30.684204600Z</date>
+  <millis>1671029010684</millis>
+  <nanos>204600</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>xmlButtonExportBookActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T15:55:33.843274600Z</date>
+  <millis>1671033333843</millis>
+  <nanos>274600</nanos>
+  <sequence>18</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>WARNING</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <exception>
+    <message>java.lang.NumberFormatException: For input string: ""</message>
+    <frame>
+      <class>java.lang.NumberFormatException</class>
+      <method>forInputString</method>
+      <line>67</line>
+    </frame>
+    <frame>
+      <class>java.lang.Integer</class>
+      <method>parseInt</method>
+      <line>678</line>
+    </frame>
+    <frame>
+      <class>java.lang.Integer</class>
+      <method>parseInt</method>
+      <line>786</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame</class>
+      <method>jButtonDeleteEscritorActionPerformed</method>
+      <line>633</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame$11</class>
+      <method>actionPerformed</method>
+      <line>336</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-14T15:55:39.401832Z</date>
+  <millis>1671033339401</millis>
+  <nanos>832000</nanos>
+  <sequence>21</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>WARNING</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonDeleteEscritorActionPerformed</method>
+  <thread>20</thread>
+  <exception>
+    <message>java.lang.NumberFormatException: For input string: ""</message>
+    <frame>
+      <class>java.lang.NumberFormatException</class>
+      <method>forInputString</method>
+      <line>67</line>
+    </frame>
+    <frame>
+      <class>java.lang.Integer</class>
+      <method>parseInt</method>
+      <line>678</line>
+    </frame>
+    <frame>
+      <class>java.lang.Integer</class>
+      <method>parseInt</method>
+      <line>786</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame</class>
+      <method>jButtonDeleteEscritorActionPerformed</method>
+      <line>633</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame$11</class>
+      <method>actionPerformed</method>
+      <line>336</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-14T15:55:46.583022400Z</date>
+  <millis>1671033346583</millis>
+  <nanos>22400</nanos>
+  <sequence>24</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>SEVERE</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <exception>
+    <message>java.io.FileNotFoundException: C:\Users\Usuário\Desktop\Trabalho-3-LP3\.\escritores.xml (The system cannot find the file specified)</message>
+    <frame>
+      <class>java.io.FileInputStream</class>
+      <method>open0</method>
+    </frame>
+    <frame>
+      <class>java.io.FileInputStream</class>
+      <method>open</method>
+      <line>216</line>
+    </frame>
+    <frame>
+      <class>java.io.FileInputStream</class>
+      <method>&lt;init&gt;</method>
+      <line>157</line>
+    </frame>
+    <frame>
+      <class>java.io.FileInputStream</class>
+      <method>&lt;init&gt;</method>
+      <line>111</line>
+    </frame>
+    <frame>
+      <class>sun.net.www.protocol.file.FileURLConnection</class>
+      <method>connect</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>sun.net.www.protocol.file.FileURLConnection</class>
+      <method>getInputStream</method>
+      <line>189</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.impl.XMLEntityManager</class>
+      <method>setupCurrentEntity</method>
+      <line>653</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.impl.XMLVersionDetector</class>
+      <method>determineDocVersion</method>
+      <line>150</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.parsers.XML11Configuration</class>
+      <method>parse</method>
+      <line>861</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.parsers.XML11Configuration</class>
+      <method>parse</method>
+      <line>825</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.parsers.XMLParser</class>
+      <method>parse</method>
+      <line>141</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.parsers.DOMParser</class>
+      <method>parse</method>
+      <line>247</line>
+    </frame>
+    <frame>
+      <class>com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl</class>
+      <method>parse</method>
+      <line>342</line>
+    </frame>
+    <frame>
+      <class>javax.xml.parsers.DocumentBuilder</class>
+      <method>parse</method>
+      <line>206</line>
+    </frame>
+    <frame>
+      <class>trab03.doc.DocumentReader</class>
+      <method>readEscritores</method>
+      <line>29</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame</class>
+      <method>jButtonCadastroBasicoActionPerformed</method>
+      <line>923</line>
+    </frame>
+    <frame>
+      <class>trab03.BookFrame$7</class>
+      <method>actionPerformed</method>
+      <line>238</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2022-12-14T15:55:46.617937Z</date>
+  <millis>1671033346617</millis>
+  <nanos>937000</nanos>
+  <sequence>26</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>WARNING</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Escritor nao cadastrado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T16:13:17.148775100Z</date>
+  <millis>1671034397148</millis>
+  <nanos>775100</nanos>
+  <sequence>8</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookUpdate</class>
+  <method>jButtonAtualizarActionPerformed</method>
+  <thread>20</thread>
+  <message>Livro Atualizado</message>
+</record>
+<record>
+  <date>2022-12-14T16:14:17.348146800Z</date>
+  <millis>1671034457348</millis>
+  <nanos>146800</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButton1ActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Editoras Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T16:33:50.067389400Z</date>
+  <millis>1671035630067</millis>
+  <nanos>389400</nanos>
+  <sequence>2</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButton1ActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Editoras Exportado</message>
+</record>
+<record>
+  <date>2022-12-14T16:35:23.147223600Z</date>
+  <millis>1671035723147</millis>
+  <nanos>223600</nanos>
+  <sequence>5</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButton1ActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Editoras Exportado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T16:36:22.685265200Z</date>
+  <millis>1671035782685</millis>
+  <nanos>265200</nanos>
+  <sequence>0</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Escritores Carregado com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T16:36:22.753576Z</date>
+  <millis>1671035782753</millis>
+  <nanos>576000</nanos>
+  <sequence>8</sequence>
+  <logger>trab03.BookFrame</logger>
+  <level>INFO</level>
+  <class>trab03.BookFrame</class>
+  <method>jButtonCadastroBasicoActionPerformed</method>
+  <thread>20</thread>
+  <message>Xml de Livro Carregado</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>

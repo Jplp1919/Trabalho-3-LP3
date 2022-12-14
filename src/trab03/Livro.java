@@ -19,6 +19,17 @@ public class Livro {
         this.idEscritor = idEscritor;
     }
 
+        public Livro(int id, String titulo, String genero, String isbn, Double preco, int idEscritor, int idEditora) {
+        this.id = id;
+        this.titulo = titulo;
+        this.genero = genero;
+        this.isbn = isbn;
+        this.preco = preco;
+        this.idEscritor = idEscritor;
+        this.idEditora = idEditora;
+    }
+
+    
     public Livro(String titulo, String genero, String isbn, Double preco, int idEscritor) {
         this.titulo = titulo;
         this.genero = genero;

@@ -13,6 +13,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import trab03.Editora;
 import trab03.Escritor;
 import trab03.Livro;
 
@@ -64,6 +65,48 @@ public class DocumentReader {
         return escritores;
     }
 
+      public List<Editora> readEditoras(String path) throws XPathExpressionException, SAXException, ParserConfigurationException, IOException {
+        File file = new File(path);
+        List<Editora> editoras = new ArrayList<>();
+
+        DocumentBuilderFactory dbf
+                = DocumentBuilderFactory.newInstance();
+
+        DocumentBuilder db = dbf.newDocumentBuilder();
+        Document doc = db.parse(file);
+
+        doc.getDocumentElement().normalize();
+        doc.getDocumentElement().getNodeName();
+        NodeList nodeList
+                = doc.getElementsByTagName("Editora");
+
+        for (int i = 0; i < nodeList.getLength(); ++i) {
+            Editora editora = new Editora();
+            Node node = nodeList.item(i);
+            node.getNodeName();
+            if (node.getNodeType()
+                    == Node.ELEMENT_NODE) {
+                Element tElement = (Element) node;
+                String id
+                        = tElement
+                                .getElementsByTagName("Id")
+                                .item(0)
+                                .getTextContent();
+                String nome = tElement
+                        .getElementsByTagName(
+                                "Nome")
+                        .item(0)
+                        .getTextContent();
+               
+                editora.setIdEditora(Integer.parseInt(id));
+                editora.setNome(nome);
+ 
+                editoras.add(editora);
+            }
+        }
+        return editoras;
+    }
+    
     public List<Livro> readLivros(String path) throws XPathExpressionException, SAXException, ParserConfigurationException, IOException {
         File file = new File(path);
         List<Livro> livros = new ArrayList<>();
@@ -118,7 +161,11 @@ public class DocumentReader {
                                 "IdEscritor")
                         .item(0)
                         .getTextContent();
-
+                String ideditora = tElement
+                        .getElementsByTagName(
+                                "IdEditora")
+                        .item(0)
+                        .getTextContent();
 
                 livro.setId(Integer.valueOf(id));
                 System.out.println(titulo);
@@ -127,6 +174,7 @@ public class DocumentReader {
                 livro.setIsbn(isbn);
                 livro.setPreco(Double.valueOf(preco));
                 livro.setIdEscritor(Integer.parseInt(idescritor));
+                livro.setIdEditora(Integer.valueOf(ideditora));
                 livros.add(livro);
             }
         }

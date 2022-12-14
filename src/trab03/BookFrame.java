@@ -55,7 +55,6 @@ public class BookFrame extends javax.swing.JFrame {
 
     public void addEscritorRows(Connection con) throws SQLException {
         DefaultTableModel dtm = (DefaultTableModel) escritorTable.getModel();
-        
 
         Object[] rowData = new Object[3];
         ResultSet rs;
@@ -167,6 +166,8 @@ public class BookFrame extends javax.swing.JFrame {
         jButtonInserirLivro = new javax.swing.JButton();
         jButtonAtualizar = new javax.swing.JButton();
         jButtonCadastrarEditora = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButtonXmlEditora = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -519,6 +520,20 @@ public class BookFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButtonXmlEditora.setText("Carregar Editoras");
+        jButtonXmlEditora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonXmlEditoraActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -528,31 +543,35 @@ public class BookFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(xmlButtonBookLoad)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(xmlButtonBookLoad))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonXmlEditora)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonCadastrarEditora)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(xmlButtonExportBook)
                 .addGap(33, 33, 33))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(129, 129, 129)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(jButtonDeleteBook))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonInserirLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(38, 38, 38)
+                        .addComponent(jButtonDeleteBook))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jButtonCadastrarEditora))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldIdBook, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))))
+                        .addComponent(jButtonAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonInserirLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldIdBook, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -570,8 +589,12 @@ public class BookFrame extends javax.swing.JFrame {
                     .addComponent(jButtonAtualizar)
                     .addComponent(jButtonInserirLivro))
                 .addGap(44, 44, 44)
-                .addComponent(jButtonCadastrarEditora)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCadastrarEditora)
+                    .addComponent(jButton1))
+                .addGap(29, 29, 29)
+                .addComponent(jButtonXmlEditora)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(xmlButtonExportBook)
                     .addComponent(xmlButtonBookLoad))
@@ -996,18 +1019,54 @@ public class BookFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonWriterUpdateActionPerformed
 
     private void jButtonCadastrarEditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarEditoraActionPerformed
-     
-            EditoraRegister er;
+
+        EditoraRegister er;
         try {
             er = new EditoraRegister();
             er.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(BookFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-      
+
 
     }//GEN-LAST:event_jButtonCadastrarEditoraActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+            Connection con = new ConnectionFactory().establishConnection();
+            DocumentWriter dw = new DocumentWriter(con);
+            dw.writeEditoras();
+            logger.info("Xml de Editoras Exportado");
+        } catch (SQLException ex) {
+            logger.log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonXmlEditoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXmlEditoraActionPerformed
+        DocumentReader dr = new DocumentReader();
+        String pathEditoras = "./editoras.xml";
+
+        try {
+            Connection con = new ConnectionFactory().establishConnection();
+            PersistDAO dao = new PersistDAO(con);
+            List<Editora> editoras = dr.readEditoras(pathEditoras);
+
+            for (int i = 0; i < editoras.size(); i++) {
+                dao.saveEditora(editoras.get(i));
+            }
+
+        } catch (XPathExpressionException | SAXException | ParserConfigurationException | IOException ex) {
+            Logger.getLogger(BookFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            logger.log(Level.WARNING, "Editora(s) ja cadastrada(s)");
+            // new Message("Escritores ja cadastrados");
+
+        }
+
+
+    }//GEN-LAST:event_jButtonXmlEditoraActionPerformed
 
     public static void main(String args[]) {
 
@@ -1028,6 +1087,7 @@ public class BookFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable bookTable;
     private javax.swing.JTable escritorTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAtualizar;
     private javax.swing.JButton jButtonAtualizarQuantidade;
     private javax.swing.JButton jButtonCadastrarEditora;
@@ -1039,6 +1099,7 @@ public class BookFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPlus;
     private javax.swing.JButton jButtonWriterRegister;
     private javax.swing.JButton jButtonWriterUpdate;
+    private javax.swing.JButton jButtonXmlEditora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;

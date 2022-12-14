@@ -7,6 +7,7 @@ import trab03.PersistDAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 import org.w3c.dom.Element;
+import trab03.Editora;
 import trab03.Livro;
 
 public class DocumentWriter {
@@ -17,6 +18,49 @@ public class DocumentWriter {
 
     public DocumentWriter(Connection con) {
         this.con = con;
+    }
+
+    /**
+     * <Editora>
+     * <Id> ... </Id>
+     * <Nome> ... </Nome>
+     * </Editora>
+     *
+     */
+    private void writeEditora(Editora editora, Element master) {
+        PersistDAO dao = new PersistDAO(con);
+
+        //<Escritor>
+        Element root = doc.createElement("Editora");
+        master.appendChild(root);
+
+        // <Id>
+        Element id = doc.createElement("Id");
+        int ideditora = editora.getIdEditora();
+        id.setTextContent(Integer.toString(ideditora));
+        root.appendChild(id);
+
+        String nomeeditora = editora.getNome();
+
+        // <Nome>
+        Element nome = doc.createElement("Nome");
+        nome.setTextContent(nomeeditora);
+        root.appendChild(nome);
+
+    }
+
+    public void writeEditoras() throws SQLException {
+        PersistDAO dao = new PersistDAO(con);
+        List<Editora> listaEditoras = dao.listarEditoras();
+        Editora editora;
+        Element master = doc.createElement("Editoras");
+        doc.appendChild(master);
+        for (int i = 0; i < listaEditoras.size(); i++) {
+            editora = listaEditoras.get(i);
+            this.writeEditora(editora, master);
+
+        }
+        DocumentManipulatorXML.writeXmlFile(doc, "./editoras.xml");
     }
 
     /**
@@ -111,16 +155,22 @@ public class DocumentWriter {
         Element idescritor = doc.createElement("IdEscritor");
         idescritor.setTextContent(Integer.toString(livro.getIdEscritor()));
         root.appendChild(idescritor);
+
+        // <IdEditora>
+        Element ideditora = doc.createElement("IdEditora");
+        ideditora.setTextContent(Integer.toString(livro.getIdEditora()));
+        root.appendChild(ideditora);
+
     }
-    
-        public void writeLivros() throws SQLException {
+
+    public void writeLivros() throws SQLException {
         PersistDAO dao = new PersistDAO(con);
         List<Livro> listaLivros = dao.listarLivros();
         Livro livro;
         Element master = doc.createElement("Livros");
         doc.appendChild(master);
         for (int i = 0; i < listaLivros.size(); i++) {
-           livro = listaLivros.get(i);
+            livro = listaLivros.get(i);
             this.writeLivro(livro, master);
 
         }

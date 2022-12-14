@@ -16,6 +16,7 @@ import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
+import trab03.Editora;
 
 /**
  *
@@ -134,10 +135,12 @@ public class PersistDAOTest {
  
   @Test
   public void deveCadastrarEditora() throws SQLException{
-      String nome = "testenome";
+      Editora editora = new Editora();
+      editora.setNome("testenome");
+      
       PersistDAO dao = new PersistDAO(con);
-      dao.saveEditora(nome);
-      int teste = dao.getEditoraPorNome(nome);
+      dao.saveEditora(editora);
+      int teste = dao.getEditoraPorNome(editora.getNome());
       assertNotNull(teste);
   }
 }
