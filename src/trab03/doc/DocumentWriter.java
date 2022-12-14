@@ -95,7 +95,7 @@ public class DocumentWriter {
 
     }
 
-    public void writeEscritores() throws SQLException {
+    public void writeEscritores(String path) throws SQLException {
         PersistDAO dao = new PersistDAO(con);
         List<Escritor> listaEscritores = dao.listarEscritores();
         Escritor escritor;
@@ -106,7 +106,7 @@ public class DocumentWriter {
             this.writeEscritor(escritor, master);
 
         }
-        DocumentManipulatorXML.writeXmlFile(doc, "./escritores.xml");
+        DocumentManipulatorXML.writeXmlFile(doc, path);
     }
 
     /**
@@ -117,7 +117,6 @@ public class DocumentWriter {
      * <Isbn> ... </Isbn>
      * <Preco> ... </Preco>
      * <IdEscritor> ... </IdEscritor>
-     * <IdEditora> ... </IdEditora>
      * </Livro>
      *
      */
@@ -155,11 +154,6 @@ public class DocumentWriter {
         Element idescritor = doc.createElement("IdEscritor");
         idescritor.setTextContent(Integer.toString(livro.getIdEscritor()));
         root.appendChild(idescritor);
-
-        // <IdEditora>
-        Element ideditora = doc.createElement("IdEditora");
-        ideditora.setTextContent(Integer.toString(livro.getIdEditora()));
-        root.appendChild(ideditora);
 
     }
 

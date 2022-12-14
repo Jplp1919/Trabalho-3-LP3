@@ -88,6 +88,25 @@ public class PersistDAO {
 
     }
 
+        public void saveEditoraId(Editora editora) throws SQLException {
+
+        String sql = "INSERT INTO Editora (IDEDITORA, NOME) VALUE (?, ?);";
+
+        try ( PreparedStatement pstm = con.prepareStatement(sql)) {
+            fh = new FileHandler("PersistDAO.log", true);
+            logger.addHandler(fh);
+            pstm.setString(1, Integer.toString(editora.getIdEditora()));
+            pstm.setString(2, editora.getNome());
+
+            pstm.execute();
+
+        } catch (IOException | SecurityException ex) {
+            logger.log(Level.SEVERE, null, ex);
+
+        }
+
+    }
+    
     public void saveLivro(Livro livro) throws SQLException {
 
         String sql = "INSERT INTO LIVROS (TITULO, GENERO, ISBN, PRECO, IDESCRITOR) VALUES (?, ?, ?, ?, ?);";
@@ -535,7 +554,29 @@ public class PersistDAO {
 
         return id;
     }
+    public Editora getEditora (int id) {
+        String sql = "SELECT IDEDITORA FROM EDITORA WHERE IDEDITORA LIKE ?";
+        
+        try ( PreparedStatement pstm = con.prepareStatement(sql)) {
+            pstm.setInt(1, id);
+            pstm.execute();
 
+            try ( ResultSet rs = pstm.getResultSet()) {
+                while (rs.next()) {
+                    Editora editora = new Editora(rs.getInt(1), rs.getString(2));
+                    
+
+                    return editora;
+                }
+
+            }
+        } catch (SQLException ex) {
+            logger.log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+    
     public int getEstoquePorId(String id) {
         String sql = "SELECT QUANTIDADE FROM INVENTORIO WHERE IDLIVROS = ?";
         int quantidade = 0;
@@ -657,5 +698,29 @@ public class PersistDAO {
             logger.log(Level.SEVERE, null, ex);
 
         }
+    }
+
+    public void deleteEditora(int id) {
+            String sql = "DELETE FROM EDITORA WHERE IDEDITORA = ?";
+        try ( PreparedStatement pstm = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            fh = new FileHandler("PersistDAO.log", true);
+            logger.addHandler(fh);
+            pstm.setInt(1, id);
+            pstm.execute();
+
+            Integer listaModificadas = pstm.getUpdateCount();
+            if (listaModificadas != 0) {
+                logger.info("Editora(s) Deletada(s)");
+                logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas);
+            } else {
+                logger.info("Editora(s) não Deletada(s)");
+                // logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas); 
+            }
+
+        } catch (IOException | SecurityException | SQLException ex) {
+            logger.log(Level.SEVERE, null, ex);
+
+        }   
+    
     }
 }

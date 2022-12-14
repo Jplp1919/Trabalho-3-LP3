@@ -161,11 +161,7 @@ public class DocumentReader {
                                 "IdEscritor")
                         .item(0)
                         .getTextContent();
-                String ideditora = tElement
-                        .getElementsByTagName(
-                                "IdEditora")
-                        .item(0)
-                        .getTextContent();
+                
 
                 livro.setId(Integer.valueOf(id));
                 System.out.println(titulo);
@@ -174,7 +170,6 @@ public class DocumentReader {
                 livro.setIsbn(isbn);
                 livro.setPreco(Double.valueOf(preco));
                 livro.setIdEscritor(Integer.parseInt(idescritor));
-                livro.setIdEditora(Integer.valueOf(ideditora));
                 livros.add(livro);
             }
         }

@@ -810,3 +810,171 @@
   <message>Livro Salvo com Sucesso</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:06:40.663262400Z</date>
+  <millis>1671041200663</millis>
+  <nanos>262400</nanos>
+  <sequence>23</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Escritor(es) Deletado(s)</message>
+</record>
+<record>
+  <date>2022-12-14T18:06:40.664286500Z</date>
+  <millis>1671041200664</millis>
+  <nanos>286500</nanos>
+  <sequence>24</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>deleteEscritor</method>
+  <thread>20</thread>
+  <message>Quantidade de linhas modificadas: 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:23:17.167983500Z</date>
+  <millis>1671042197167</millis>
+  <nanos>983500</nanos>
+  <sequence>10</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>1</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T18:23:17.170933600Z</date>
+  <millis>1671042197170</millis>
+  <nanos>933600</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>getDadosEstoque</method>
+  <thread>1</thread>
+  <message>Dados do Estoque Mostrados</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:23:55.992148500Z</date>
+  <millis>1671042235992</millis>
+  <nanos>148500</nanos>
+  <sequence>9</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>1</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T18:23:55.994142200Z</date>
+  <millis>1671042235994</millis>
+  <nanos>142200</nanos>
+  <sequence>10</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>getDadosEstoque</method>
+  <thread>1</thread>
+  <message>Dados do Estoque Mostrados</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:25:28.145600700Z</date>
+  <millis>1671042328145</millis>
+  <nanos>600700</nanos>
+  <sequence>10</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>1</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T18:25:28.147595Z</date>
+  <millis>1671042328147</millis>
+  <nanos>595000</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>getDadosEstoque</method>
+  <thread>1</thread>
+  <message>Dados do Estoque Mostrados</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:38:21.104655500Z</date>
+  <millis>1671043101104</millis>
+  <nanos>655500</nanos>
+  <sequence>10</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>1</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T18:38:21.106675Z</date>
+  <millis>1671043101106</millis>
+  <nanos>675000</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>getDadosEstoque</method>
+  <thread>1</thread>
+  <message>Dados do Estoque Mostrados</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T18:45:29.914898600Z</date>
+  <millis>1671043529914</millis>
+  <nanos>898600</nanos>
+  <sequence>10</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>saveLivro</method>
+  <thread>1</thread>
+  <message>Livro Salvo com Sucesso</message>
+</record>
+<record>
+  <date>2022-12-14T18:45:29.917891400Z</date>
+  <millis>1671043529917</millis>
+  <nanos>891400</nanos>
+  <sequence>11</sequence>
+  <logger>trab03.PersistDAO</logger>
+  <level>INFO</level>
+  <class>trab03.PersistDAO</class>
+  <method>getDadosEstoque</method>
+  <thread>1</thread>
+  <message>Dados do Estoque Mostrados</message>
+</record>
+</log>

@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
-package trab02;
+package trab03;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 import trab03.PersistDAO;
 import trab03.DadosEstoque;
@@ -108,7 +111,7 @@ public class PersistDAOTest {
         dao.saveLivro(livro);
         int quantidade = 45;
         int quantidadeTeste = 65;
-        dao.saveEstoque(livro.getId(), quantidade);
+        //dao.saveEstoque(livro.getId(), quantidade);
         dao.updateEstoque(livro.getId(), quantidadeTeste);
         int teste = dao.getEstoquePorId(Integer.toString(livro.getId()));
         assertEquals(quantidadeTeste, teste);
@@ -142,5 +145,17 @@ public class PersistDAOTest {
       dao.saveEditora(editora);
       int teste = dao.getEditoraPorNome(editora.getNome());
       assertNotNull(teste);
+  }
+  
+    @Test
+  public void deveDeletarUmaEditora() throws SQLException{
+      Editora editora = new Editora();
+      editora.setNome("testenome");
+      editora.setIdEditora(998);
+      PersistDAO dao = new PersistDAO(con);
+      dao.saveEditoraId(editora);
+      dao.deleteEditora(editora.getIdEditora());
+      Editora teste = dao.getEditora(editora.getIdEditora());
+      assertNull(teste);
   }
 }
