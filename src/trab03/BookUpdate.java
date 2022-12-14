@@ -11,7 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-
 public class BookUpdate extends javax.swing.JFrame {
 
     static Logger logger = Logger.getLogger(BookFrame.class.getName());
@@ -22,10 +21,42 @@ public class BookUpdate extends javax.swing.JFrame {
         DefaultTableModel dtm = (DefaultTableModel) bookTable.getModel();
         PersistDAO dao = new PersistDAO(con);
 
-        Object[] rowData = new Object[7];
+        Object[] rowData = new Object[8];
 
         ResultSet rs;
-        String sql = "SELECT IDLIVROS, TITULO, GENERO, ISBN, PRECO, IDESCRITOR FROM LIVROS";
+        String sql = "SELECT IDLIVROS, TITULO, GENERO, ISBN, PRECO, IDESCRITOR, IDEDITORA FROM LIVROS";
+
+        try ( PreparedStatement pstm = con.prepareStatement(sql)) {
+            pstm.execute();
+            rs = pstm.getResultSet();
+
+            while (rs.next()) {
+              
+                rowData[0] = rs.getInt(1);
+                rowData[1] = rs.getString(2);
+                rowData[2] = rs.getString(3);
+                rowData[3] = rs.getString(4);
+                rowData[4] = rs.getDouble(5);
+                int idescritor = rs.getInt(6);
+                List<String> nome = dao.getEscritorById(idescritor);
+                rowData[5] = nome.get(0);
+                rowData[6] = idescritor;
+               
+                rowData[7]= dao.getEditoraPorId( Integer.toString(rs.getInt(7)));
+                dtm.addRow(rowData);
+            }
+
+        }
+
+    }
+
+    public void addEditoraRows(Connection con) throws SQLException {
+        DefaultTableModel dtm = (DefaultTableModel) jTableEditora.getModel();
+        PersistDAO dao = new PersistDAO(con);
+
+        Object[] rowData = new Object[2];
+        ResultSet rs;
+        String sql = "SELECT * FROM EDITORA";
 
         try ( PreparedStatement pstm = con.prepareStatement(sql)) {
             pstm.execute();
@@ -34,25 +65,23 @@ public class BookUpdate extends javax.swing.JFrame {
             while (rs.next()) {
                 rowData[0] = rs.getInt(1);
                 rowData[1] = rs.getString(2);
-                rowData[2] = rs.getString(3);
-                rowData[3] = rs.getString(4);
-                rowData[4] = rs.getDouble(5);
-                int id = rs.getInt(6);
-                List<String> nome = dao.getEscritorById(id);
-                rowData[5] = nome.get(0);
-                rowData[6] = id;
                 dtm.addRow(rowData);
             }
 
         }
+    }
 
+    public void clearEditoras() {
+        DefaultTableModel dtm = (DefaultTableModel) jTableEditora.getModel();
+        dtm.setRowCount(0);
     }
 
     public BookUpdate(BookFrame bf) throws SQLException {
         initComponents();
         Connection con = new ConnectionFactory().establishConnection();
         this.bookframe = bf;
-          addBookRows(con);
+        addBookRows(con);
+        addEditoraRows(con);
     }
 
     @SuppressWarnings("unchecked")
@@ -71,17 +100,17 @@ public class BookUpdate extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldEscritorID = new javax.swing.JTextField();
         jButtonAtualizar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         bookTable = new javax.swing.JTable();
         jTextFieldBookId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jTextFieldEditora = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableEditora = new javax.swing.JTable();
 
-        jTextFieldBookTitulo.setText("Título");
         jTextFieldBookTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBookTituloActionPerformed(evt);
@@ -94,7 +123,6 @@ public class BookUpdate extends javax.swing.JFrame {
 
         jLabel7.setText("Genero");
 
-        jTextFieldBookGenero.setText("Genero");
         jTextFieldBookGenero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBookGeneroActionPerformed(evt);
@@ -103,7 +131,6 @@ public class BookUpdate extends javax.swing.JFrame {
 
         jLabel9.setText("Preço");
 
-        jTextFieldPreco.setText("Preço");
         jTextFieldPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPrecoActionPerformed(evt);
@@ -112,16 +139,14 @@ public class BookUpdate extends javax.swing.JFrame {
 
         jLabel8.setText("Isbn");
 
-        jTextFieldIsbn.setText("Isbn");
         jTextFieldIsbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldIsbnActionPerformed(evt);
             }
         });
 
-        jLabel10.setText("Escritor");
+        jLabel10.setText("Id do Escritor");
 
-        jTextFieldEscritorID.setText("ID");
         jTextFieldEscritorID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEscritorIDActionPerformed(evt);
@@ -135,21 +160,19 @@ public class BookUpdate extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("ID ");
-
         bookTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Titulo", "Genero", "ISBN", "Valor", "Escritor", "Id Escritor"
+                "ID", "Titulo", "Genero", "ISBN", "Valor", "Escritor", "Id Escritor", "Editora"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -181,13 +204,37 @@ public class BookUpdate extends javax.swing.JFrame {
 
         jLabel3.setText("Id Livro");
 
-        jLabel4.setText("Editora");
+        jLabel4.setText("Editoras");
+
+        jLabel2.setText(" Editora");
+
+        jTableEditora.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID ", "Nome"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableEditora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableEditoraMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTableEditora);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -198,56 +245,51 @@ public class BookUpdate extends javax.swing.JFrame {
                                 .addGap(75, 75, 75)
                                 .addComponent(jLabel5))
                             .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jTextFieldBookId, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(21, 21, 21))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jTextFieldBookTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldBookGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(192, 192, 192)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldEscritorID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel1))
-                                        .addGap(118, 118, 118)))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jTextFieldBookId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldBookTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldBookGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jTextFieldEscritorID, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(170, 170, 170)
-                                .addComponent(jButtonAtualizar))
+                                .addGap(199, 199, 199)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(188, 188, 188)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 194, Short.MAX_VALUE)))
+                                .addGap(325, 325, 325)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(300, 300, 300)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonAtualizar)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 294, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -255,29 +297,27 @@ public class BookUpdate extends javax.swing.JFrame {
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel10))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldBookId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldBookTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldBookGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldIsbn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldBookGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEscritorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(jLabel10)
-                .addGap(13, 13, 13)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldEscritorID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(5, 5, 5)
                 .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonAtualizar)
                 .addContainerGap())
         );
@@ -312,30 +352,28 @@ public class BookUpdate extends javax.swing.JFrame {
         String genero = jTextFieldBookGenero.getText();
         String isbn = jTextFieldIsbn.getText();
         String preco = jTextFieldPreco.getText();
-        
+
         int idEscritor = Integer.parseInt(jTextFieldEscritorID.getText());
-       
-        
-        
+
         String NomeEditora = jTextFieldEditora.getText();
-        
+
         try {
             Connection con = new ConnectionFactory().establishConnection();
             PersistDAO dao = new PersistDAO(con);
             //idEscritor = dao.getEscritorById(idEscritor);
-            
-            
+
             String idEscritorStr = Integer.toString(idEscritor);
             dao.updateLivro(id, titulo, genero, isbn, preco, idEscritorStr, NomeEditora);
             DefaultTableModel dtm = (DefaultTableModel) bookTable.getModel();
             dtm.setRowCount(0);
             this.addBookRows(con);
             logger.info("Livro Atualizado");
-                bookframe.clearBooks();
-                bookframe.addBookRows(con);
-             
+            bookframe.clearBooks();
+            bookframe.addBookRows(con);
+            bookframe.clearEsotque();
+            bookframe.addEstoqueRows(con);
 
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
 
             logger.log(Level.SEVERE, null, "Escritor não Cadastrado");
         }
@@ -362,9 +400,6 @@ public class BookUpdate extends javax.swing.JFrame {
             Object valor = bookTable.getValueAt(index, 4);
             String idEscritor = bookTable.getValueAt(index, 6).toString();
 
-
-
-
             jTextFieldBookId.setText(id.toString());
             jTextFieldBookTitulo.setText(titulo.toString());
             jTextFieldBookGenero.setText(genero.toString());
@@ -372,7 +407,6 @@ public class BookUpdate extends javax.swing.JFrame {
             jTextFieldPreco.setText(valor.toString());
 
             jTextFieldEscritorID.setText(idEscritor);
-           
 
         } catch (SQLException ex) {
             logger.log(Level.SEVERE, null, ex);
@@ -384,6 +418,19 @@ public class BookUpdate extends javax.swing.JFrame {
     private void jTextFieldBookIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBookIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBookIdActionPerformed
+
+    private void jTableEditoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEditoraMouseClicked
+    
+         int index = jTableEditora.getSelectedRow();
+
+        Object editora = jTableEditora.getValueAt(index, 1);
+
+
+        jTextFieldEditora.setText(editora.toString());
+
+        
+
+    }//GEN-LAST:event_jTableEditoraMouseClicked
 
     /**
      * @param args the command line arguments
@@ -421,8 +468,8 @@ public class BookUpdate extends javax.swing.JFrame {
         } catch (SecurityException ex) {
             Logger.getLogger(BookUpdate.class.getName()).log(Level.SEVERE, null, ex);
         }
-                    logger.addHandler(fh);
-        
+        logger.addHandler(fh);
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -434,8 +481,8 @@ public class BookUpdate extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable bookTable;
     private javax.swing.JButton jButtonAtualizar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -444,8 +491,9 @@ public class BookUpdate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTableEditora;
     private javax.swing.JTextField jTextFieldBookGenero;
     private javax.swing.JTextField jTextFieldBookId;
     private javax.swing.JTextField jTextFieldBookTitulo;

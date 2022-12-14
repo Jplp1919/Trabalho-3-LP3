@@ -43,15 +43,15 @@ public class PersistDAO {
             } catch (SQLException ex) {
                 logger.log(Level.WARNING, null, ex);
 
-            } 
+            }
         } catch (IOException | SecurityException ex) {
             logger.log(Level.SEVERE, null, ex);
 
         }
 
     }
-    
-        public void saveEscritorId(Escritor escritor) throws SQLException {
+
+    public void saveEscritorId(Escritor escritor) throws SQLException {
 
         String sql = "INSERT INTO ESCRITOR (IDESCRITOR, PRIMEIRONOME, SOBRENOME) VALUES (?, ?, ?);";
 
@@ -63,15 +63,14 @@ public class PersistDAO {
             pstm.setString(3, escritor.getSobreNome());
             pstm.execute();
 
-
         } catch (IOException | SecurityException ex) {
             logger.log(Level.SEVERE, null, ex);
 
         }
 
     }
-    
-             public void saveEditora(String nome) throws SQLException {
+
+    public void saveEditora(String nome) throws SQLException {
 
         String sql = "INSERT INTO Editora (Nome) VALUE (?);";
 
@@ -82,14 +81,13 @@ public class PersistDAO {
 
             pstm.execute();
 
-
         } catch (IOException | SecurityException ex) {
             logger.log(Level.SEVERE, null, ex);
 
         }
 
     }
-        
+
     public void saveLivro(Livro livro) throws SQLException {
 
         String sql = "INSERT INTO LIVROS (TITULO, GENERO, ISBN, PRECO, IDESCRITOR) VALUES (?, ?, ?, ?, ?);";
@@ -128,8 +126,14 @@ public class PersistDAO {
             pstm.execute();
 
             Integer listaModificadas = pstm.getUpdateCount();
-            logger.info("Livro(s) Deletado(s)");
-            logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas);
+            if (listaModificadas != 0) {
+                logger.info("Livro(s) Deletado(s)");
+                logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas);
+            } else {
+                logger.info("Livro(s) não Deletado(s)");
+                // logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas); 
+            }
+
         } catch (IOException | SecurityException | SQLException ex) {
             logger.log(Level.SEVERE, null, ex);
 
@@ -146,8 +150,13 @@ public class PersistDAO {
             pstm.execute();
 
             Integer listaModificadas = pstm.getUpdateCount();
-            logger.info("Escritor(es) Deletado(s)");
-            logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas);
+            if (listaModificadas != 0) {
+                logger.info("Escritor(es) Deletado(s)");
+                logger.log(Level.INFO, "Quantidade de linhas modificadas: {0}", listaModificadas);
+            } else {
+                logger.info("Escritor(es) não Deletado(s)");
+            }
+
         } catch (IOException | SecurityException | SQLException ex) {
             Message m = new Message("Escritor com Livros Cadastrados");
             logger.log(Level.SEVERE, null, ex);
@@ -313,7 +322,7 @@ public class PersistDAO {
             }
             if (!nomeEditora.equals("")) {
                 PersistDAO dao = new PersistDAO(con);
-                String idEditora = Integer.toString(dao.getEditoraId(nomeEditora));
+                String idEditora = Integer.toString(dao.getEditoraPorNome(nomeEditora));
 
                 sql = "UPDATE LIVROS SET IDEDITORA = ? WHERE IDLIVROS = ?";
                 try ( PreparedStatement ps = con.prepareStatement(sql)) {
@@ -474,7 +483,7 @@ public class PersistDAO {
 
     }
 
-    public int getEditoraId(String nome) {
+    public int getEditoraPorNome(String nome) {
         String sql = "SELECT IDEDITORA FROM EDITORA WHERE NOME LIKE ?";
         int id = 0;
         try ( PreparedStatement pstm = con.prepareStatement(sql)) {

@@ -137,7 +137,7 @@ public class PersistDAOTest {
       String nome = "testenome";
       PersistDAO dao = new PersistDAO(con);
       dao.saveEditora(nome);
-      int teste = dao.getEditoraId(nome);
+      int teste = dao.getEditoraPorNome(nome);
       assertNotNull(teste);
   }
 }

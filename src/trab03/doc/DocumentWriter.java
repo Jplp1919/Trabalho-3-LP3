@@ -73,6 +73,7 @@ public class DocumentWriter {
      * <Isbn> ... </Isbn>
      * <Preco> ... </Preco>
      * <IdEscritor> ... </IdEscritor>
+     * <IdEditora> ... </IdEditora>
      * </Livro>
      *
      */
